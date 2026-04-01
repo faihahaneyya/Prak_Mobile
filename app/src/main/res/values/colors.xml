@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bg">#AFE6F6</color>
+    <color name="btn">#FF72D4</color>
+    <color name="txtview">#34449E</color>
+    <color name="txtresult">#FF036E</color>
 </resources>
