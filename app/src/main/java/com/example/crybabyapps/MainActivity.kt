@@ -21,6 +21,8 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+
         binding.btnToFourth.setOnClickListener {
             val intent = Intent(this, FourthActivity::class.java)
             intent.putExtra("name", "Politeknik Caltex Riau")

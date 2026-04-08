@@ -20,13 +20,15 @@ class FourthActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
     }
+
     override fun onStart() {
         super.onStart()
         Log.e("-- OnStart --", "onStart: FourthActivity terlihat di layar")
-    }
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.e("-- onDestroy --", "FourthActivity dihapus dari stack")
+
+
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.e("-- onDestroy --", "FourthActivity dihapus dari stack")
 
 
         binding = ActivityFourthBinding.inflate(layoutInflater)
@@ -36,14 +38,14 @@ class FourthActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        binding.btnToFour.setOnClickListener {
+        val name = intent.getStringExtra("name")
+        val from = intent.getStringExtra("from")
+        val age = intent.getIntExtra("age", 0)
+        Log.e("Data Intent", "Nama: $name , Usia: $age, Asal: $from")
+
+        binding.btnback.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        val name = intent.getStringExtra("name")
-        val from = intent.getStringExtra("from")
-        val age = intent.getIntExtra("age",0)
-        Log.e("Data Intent","Nama: $name , Usia: $age, Asal: $from")
-
     }
 }

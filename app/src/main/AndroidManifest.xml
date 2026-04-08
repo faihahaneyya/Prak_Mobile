@@ -13,7 +13,7 @@
         android:theme="@style/Theme.CrybabyApps">
         <activity
             android:name=".pertemuan4.FourthActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".pertemuan3.ThirdResultActivity"
             android:exported="false" />
