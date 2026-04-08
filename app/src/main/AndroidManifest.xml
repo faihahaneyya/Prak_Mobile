@@ -12,15 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CrybabyApps">
         <activity
+            android:name=".pertemuan4.FourthActivity"
+            android:exported="false" />
+        <activity
             android:name=".pertemuan3.ThirdResultActivity"
             android:exported="false" />
         <activity
             android:name=".pertemuan2.SecondActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
-            android:name=".pertemuan3.ThirdActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".pertemuan3.ThirdActivity"
             android:exported="false" />
     </application>
 
