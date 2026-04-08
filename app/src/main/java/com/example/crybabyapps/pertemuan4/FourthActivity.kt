@@ -10,6 +10,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.crybabyapps.MainActivity
 import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.ActivityFourthBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 
 
 class FourthActivity : AppCompatActivity() {
@@ -19,16 +21,6 @@ class FourthActivity : AppCompatActivity() {
         Log.e("-- onCreate --", "FourthActivity dibuat pertama kali")
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.e("-- OnStart --", "onStart: FourthActivity terlihat di layar")
-
-
-//    override fun onDestroy() {
-//        super.onDestroy()
-//        Log.e("-- onDestroy --", "FourthActivity dihapus dari stack")
 
 
         binding = ActivityFourthBinding.inflate(layoutInflater)
@@ -41,11 +33,46 @@ class FourthActivity : AppCompatActivity() {
         val name = intent.getStringExtra("name")
         val from = intent.getStringExtra("from")
         val age = intent.getIntExtra("age", 0)
-        Log.e("Data Intent", "Nama: $name , Usia: $age, Asal: $from")
+        Log.e("=== Data Intent === ", "Nama: $name , Usia: $age, Asal: $from")
 
         binding.btnback.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            finish()
         }
+
+        binding.btnShowSnackbar.setOnClickListener {
+            Snackbar.make(binding.root, "Ini adalah Snackbar", Snackbar.LENGTH_SHORT)
+                .setAction("Tutup") {
+                    Log.e("Info Snackbar", "Snackbar ditutup")
+                }
+                .show()
+        }
+
+        binding.btnShowAlertDialog.setOnClickListener {
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Konfirmasi")
+                .setMessage("Apakah Anda yakin ingin melanjutkan?")
+                .setPositiveButton("Ya") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Ya!")
+                }
+                .setNegativeButton("Batal") { dialog, _ ->
+                    dialog.dismiss()
+                    Log.e("Info Dialog","Anda memilih Tidak!")
+                }
+                .show()
+        }
+
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("onStart", "onStart: FourthActivity terlihat di layar")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("onDestroy", "FourthActivity  dihapus dari stack")
+
+    }
+
 }
