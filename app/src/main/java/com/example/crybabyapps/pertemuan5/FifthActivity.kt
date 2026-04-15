@@ -68,14 +68,14 @@ class FifthActivity : AppCompatActivity() {
             R.id.sub_theme_light -> {
                 // Mengubah tema ke Mode Terang
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                Toast.makeText(this, "Mode Terang Aktif", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Mode Light Aktif", Toast.LENGTH_SHORT).show()
                 true
             }
 
             R.id.sub_theme_dark -> {
                 // Mengubah tema ke Mode Gelap
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                Toast.makeText(this, "Mode Gelap Aktif", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Mode Dark Aktif", Toast.LENGTH_SHORT).show()
                 true
             }
 

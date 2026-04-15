@@ -26,7 +26,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="BERITA MERDEKA"
+                android:text="Berita Merdeka"
                 android:textColor="@color/pink_primary"
                 android:textStyle="bold"
                 android:letterSpacing="0.1"

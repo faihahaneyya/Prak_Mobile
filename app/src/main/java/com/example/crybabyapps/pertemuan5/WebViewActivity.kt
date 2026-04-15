@@ -75,7 +75,7 @@ class WebViewActivity : AppCompatActivity() {
         if (binding.webView.canGoBack()) {
             binding.webView.goBack()
         } else {
-            @Suppress("DEPRECATION")
+            @Suppress("deprecation")
             super.onBackPressed()
         }
     }

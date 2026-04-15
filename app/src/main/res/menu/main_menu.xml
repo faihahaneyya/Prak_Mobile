@@ -7,8 +7,8 @@
         android:title="Tampilan"
         app:showAsAction="never">
         <menu>
-            <item android:id="@+id/sub_theme_light" android:title="Mode Terang" />
-            <item android:id="@+id/sub_theme_dark" android:title="Mode Gelap" />
+            <item android:id="@+id/sub_theme_light" android:title="Mode Light" />
+            <item android:id="@+id/sub_theme_dark" android:title="Mode Dark" />
         </menu>
     </item>
 </menu>
