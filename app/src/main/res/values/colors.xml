@@ -6,4 +6,8 @@
     <color name="btn">#FF72D4</color>
     <color name="txtview">#34449E</color>
     <color name="txtresult">#FF036E</color>
+        <color name="pink_primary">#F48FB1</color>
+        <color name="pink_secondary">#FCE4EC</color>
+        <color name="pink_accent">#AD1457</color>
+        <color name="background_soft">#FFF9FB</color>
 </resources>

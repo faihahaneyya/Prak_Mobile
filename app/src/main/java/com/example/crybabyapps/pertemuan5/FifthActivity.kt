@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.res.ResourcesCompat
 import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.ActivityFifthBinding
 
@@ -21,22 +20,41 @@ class FifthActivity : AppCompatActivity() {
         binding = ActivityFifthBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Setup Toolbar
         setSupportActionBar(binding.toolbar)
+
+        // Menghilangkan judul bawaan agar judul kustom di tengah bisa tampil
         supportActionBar?.apply {
-            title = "Activity Fifth"
-            subtitle = "Ini adalah subtitle"
+            setDisplayShowTitleEnabled(false)
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
 
+        // Memberikan warna pink pada icon navigasi (panah back)
+        binding.toolbar.navigationIcon?.setTint(
+            ResourcesCompat.getColor(resources, R.color.pink_primary, null)
+        )
+
+        // Set Font kustom pada judul toolbar
+        val typeface = ResourcesCompat.getFont(this, R.font.cherry)
+        binding.tvToolbarTitle.typeface = typeface
+
+        // Navigasi ke WebView
         binding.btnWebView.setOnClickListener {
             val intent = Intent(this, WebViewActivity::class.java)
             startActivity(intent)
         }
     }
 
+    // Fungsi Menu sekarang sudah di luar onCreate (Benar)
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
+
+        // Memberikan warna pink pada semua icon di menu pojok kanan secara otomatis
+        for (i in 0 until menu.size()) {
+            val pinkColor = ResourcesCompat.getColor(resources, R.color.pink_primary, null)
+            menu.getItem(i).icon?.setTint(pinkColor)
+        }
         return true
     }
 
@@ -46,12 +64,23 @@ class FifthActivity : AppCompatActivity() {
                 onBackPressedDispatcher.onBackPressed()
                 true
             }
-            R.id.action_search -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
+            // --- IMPROVISASI BAHASAN 2: OPTION MENU (LOGIKA DARK MODE) ---
+            R.id.sub_theme_light -> {
+                // Mengubah tema ke Mode Terang
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                Toast.makeText(this, "Mode Terang Aktif", Toast.LENGTH_SHORT).show()
                 true
             }
-            R.id.action_settings -> {
-                Toast.makeText(this, "Settings Clicked", Toast.LENGTH_SHORT).show()
+
+            R.id.sub_theme_dark -> {
+                // Mengubah tema ke Mode Gelap
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                Toast.makeText(this, "Mode Gelap Aktif", Toast.LENGTH_SHORT).show()
+                true
+            }
+
+            R.id.action_share -> {
+                Toast.makeText(this, "Membuka Menu Berbagi", Toast.LENGTH_SHORT).show()
                 true
             }
             else -> super.onOptionsItemSelected(item)
