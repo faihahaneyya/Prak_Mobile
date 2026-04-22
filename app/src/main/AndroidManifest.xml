@@ -15,7 +15,10 @@
         android:theme="@style/Theme.CrybabyApps">
         <activity
             android:name=".AuthActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,8 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".pertemuan5.FifthActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".pertemuan2.SecondActivity"
             android:exported="false" />
