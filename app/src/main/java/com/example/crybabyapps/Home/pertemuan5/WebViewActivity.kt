@@ -1,8 +1,9 @@
-package com.example.crybabyapps.pertemuan5
+package com.example.crybabyapps.Home.pertemuan5
 
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
@@ -40,7 +41,7 @@ class WebViewActivity : AppCompatActivity() {
 
         // Logika ProgressBar responsif terhadap loading web
         binding.webView.webChromeClient = object : WebChromeClient() {
-            override fun onProgressChanged(view: android.webkit.WebView?, newProgress: Int) {
+            override fun onProgressChanged(view: WebView?, newProgress: Int) {
                 binding.progressBar.progress = newProgress
                 if (newProgress == 100) {
                     binding.progressBar.visibility = View.GONE

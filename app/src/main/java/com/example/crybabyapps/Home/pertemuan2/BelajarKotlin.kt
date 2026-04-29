@@ -1,4 +1,4 @@
-package com.example.crybabyapps.pertemuan2
+package com.example.crybabyapps.Home.pertemuan2
 
 fun main() {
     println("Hai rekan-rekan...")

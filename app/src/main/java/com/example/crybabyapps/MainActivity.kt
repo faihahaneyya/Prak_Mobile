@@ -2,17 +2,15 @@ package com.example.crybabyapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.crybabyapps.databinding.ActivityMainBinding
-import com.example.crybabyapps.pertemuan3.ThirdActivity
-import com.example.crybabyapps.pertemuan4.FourthActivity
-import com.example.crybabyapps.pertemuan5.FifthActivity
-import com.example.crybabyapps.pertemuan_7.SeventhActivity
+import com.example.crybabyapps.Home.pertemuan3.ThirdActivity
+import com.example.crybabyapps.Home.pertemuan4.FourthActivity
+import com.example.crybabyapps.Home.pertemuan5.FifthActivity
+import com.example.crybabyapps.Home.pertemuan_7.SeventhActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
