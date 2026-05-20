@@ -16,6 +16,7 @@ import com.example.crybabyapps.Home.pertemuan_7.SeventhActivity
 import com.example.crybabyapps.Home.pertemuan_9.NinthActivity
 import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.FragmentHomeBinding
+import com.example.crybabyapps.pertemuan_10.TenthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 
@@ -63,6 +64,12 @@ class HomeFragment : Fragment() {
             val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnToTenth.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(requireContext())
                 .setTitle("Logout")
