@@ -7,17 +7,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crybabyapps.AuthActivity
+import com.example.crybabyapps.Data.Api.PhotoApiClient
 import com.example.crybabyapps.Home.pertemuan3.ThirdActivity
 import com.example.crybabyapps.Home.pertemuan4.FourthActivity
 import com.example.crybabyapps.Home.pertemuan5.FifthActivity
 import com.example.crybabyapps.Home.pertemuan_7.SeventhActivity
 import com.example.crybabyapps.Home.pertemuan_9.NinthActivity
+import com.example.crybabyapps.Home.photo.PhotoAdapter
 import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.FragmentHomeBinding
 import com.example.crybabyapps.pertemuan_10.TenthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -89,6 +96,29 @@ class HomeFragment : Fragment() {
 
                 }
                 .show()
+        }
+        loadPhoto()
+    }
+
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                binding.rvGallery.layoutManager = GridLayoutManager(requireContext(), 2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
