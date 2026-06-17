@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.crybabyapps.AuthActivity
 import com.example.crybabyapps.Data.Api.PhotoApiClient
 import com.example.crybabyapps.Home.pertemuan3.ThirdActivity
@@ -20,11 +19,11 @@ import com.example.crybabyapps.Home.pertemuan5.FifthActivity
 import com.example.crybabyapps.Home.pertemuan_7.SeventhActivity
 import com.example.crybabyapps.Home.pertemuan_9.NinthActivity
 import com.example.crybabyapps.Home.photo.PhotoAdapter
-import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.FragmentHomeBinding
-import com.example.crybabyapps.pertemuan_10.TenthActivity
+import com.example.crybabyapps.Home.pertemuan_10.TenthActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
+import com.example.crybabyapps.Home.pertemuan_13.ThirteenthActivity
 
 
 class HomeFragment : Fragment() {
@@ -74,6 +73,11 @@ class HomeFragment : Fragment() {
 
         binding.btnToTenth.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btnToThirteenth.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 

@@ -137,24 +137,39 @@
                 app:layout_constraintTop_toBottomOf="@+id/btnToSeventh" />
 
             <Button
+                android:id="@+id/btnToThirteenth"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/pink_primary"
+                android:text="pertemuan 13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/btnToNinth"
+                app:layout_constraintTop_toBottomOf="@+id/btnToTenth" />
+
+            <Button
                 android:id="@+id/btnLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="48dp"
                 android:backgroundTint="#F7E2E9"
                 android:text="Logout"
                 android:textColor="@color/pink_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnToTenth" />
+                app:layout_constraintTop_toBottomOf="@+id/btnToThirteenth" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvGallery"
-                android:layout_width="353dp"
-                android:layout_height="243dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="286dp"
+                android:layout_height="216dp"
+                android:layout_marginTop="60dp"
                 android:padding="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnLogout" />
 

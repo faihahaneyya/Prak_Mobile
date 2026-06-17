@@ -1,4 +1,4 @@
-package com.example.crybabyapps.pertemuan_10
+package com.example.crybabyapps.Home.pertemuan_10
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,9 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.crybabyapps.R
 import com.example.crybabyapps.databinding.FragmentTabCBinding
 
 

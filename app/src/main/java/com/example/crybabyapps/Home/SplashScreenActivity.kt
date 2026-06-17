@@ -1,4 +1,4 @@
-package com.example.crybabyapps
+package com.example.crybabyapps.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.example.crybabyapps.AuthActivity
+import com.example.crybabyapps.MainActivity
+import com.example.crybabyapps.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

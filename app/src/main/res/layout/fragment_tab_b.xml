@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/pink_primary"
-    tools:context=".pertemuan_10.TabBFragment">
+    tools:context=".Home.pertemuan_10.TabBFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

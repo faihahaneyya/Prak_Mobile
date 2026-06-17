@@ -1,4 +1,4 @@
-package com.example.crybabyapps.pertemuan_10
+package com.example.crybabyapps.Home.pertemuan_13
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -8,16 +8,16 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.crybabyapps.R
-import com.example.crybabyapps.databinding.ActivityTenthBinding
+import com.example.crybabyapps.databinding.ActivityThirteenthBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-class TenthActivity : AppCompatActivity() {
+class ThirteenthActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityTenthBinding
+    private lateinit var binding: ActivityThirteenthBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        binding = ActivityTenthBinding.inflate(layoutInflater)
+        binding = ActivityThirteenthBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,14 +27,14 @@ class TenthActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.apply {
-            title = "Pertemuan 10"
+            title = "Pertemuan 13"
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_arrow_back)
         }
 
         // 1. Inisialisasi Adapter
-        val tabsAdapter = TenthTabsAdapter(this)
+        val tabsAdapter = ThirteenthTabsAdapter(this)
 
         // 2. Set adapter ke ViewPager2
         binding.viewPager.adapter = tabsAdapter
@@ -44,30 +44,23 @@ class TenthActivity : AppCompatActivity() {
             // Atur judul untuk setiap tab
             when (position) {
                 0 -> {
-                    tab.text = "Tab A"
+                    tab.text = "Tab Capture"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(  this, R.drawable.ic_home)
                     //Tambah Badge Tanpa nomor (hanya titik)
-                    val badge = tab.getOrCreateBadge()
-                    badge.isVisible = true
+
                 }
                 1 -> {
-                    tab.text = "Tab B"
+                    tab.text = "Tab Scan"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(  this, R.drawable.ic_home)
-                    //Tambah Badge dengan nomor
-                    val badge = tab.getOrCreateBadge()
-                    badge.isVisible = true
-                    badge.number = 5
+
                 }
                 2 -> {
-                    tab.text = "Produk"
+                    tab.text = "Tab QR Code"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(this, R.drawable.ic_home)
-                    //Tambah Badge dengan nomor
-                    val badge = tab.getOrCreateBadge()
-                    badge.isVisible = true
-                    badge.number = 5
+
                 }
             }
         }.attach()
